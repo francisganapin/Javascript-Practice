@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Push Items to Array and Display</title>
+</head>
+<body>
+
+  <button id="button1">Add Item 1</button>
+  <button id="button2">Add Item 2</button>
+  <button id="button3">Add Item 3</button>
+
+  <ul id="itemList"></ul>
+
+<script>
+    // Step 1: Create an array
+    let myArray = [];
+
+    // Step 2: Function to update the displayed list
+    function updateList() {
+      const itemList = document.getElementById('itemList');
+      itemList.innerHTML = ''; // Clear the current list
+
+      myArray.forEach((item, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `Item ${index + 1}: ${item}`;
+        itemList.appendChild(listItem);
+      });
+    }
+
+    // Step 3: Set up the buttons and event listeners
+    document.getElementById('button1').addEventListener('click', function() {
+      myArray.push('Item 1');
+      updateList(); // Update the displayed list
+    });
+
+    document.getElementById('button2').addEventListener('click', function() {
+      myArray.push('Item 2');
+      updateList(); // Update the displayed list
+    });
+
+    document.getElementById('button3').addEventListener('click', function() {
+      myArray.push('Item 3');
+      updateList(); // Update the displayed list
+    });
+</script>
+
+<script>
+    const $btnPrint = document.querySelector("#btnPrint");
+    $btnPrint.addEventListener("click", () => {
+        window.print();
+    });
+</script>
+
+</body>
+</html>

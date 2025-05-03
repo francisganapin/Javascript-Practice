@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced HTML Card</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+        .card {
+            width: 350px;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: #fff;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.2);
+        }
+        .card img {
+            width: 100%;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .card-title {
+            font-size: 1.75em;
+            margin: 0 0 10px;
+            color: #333;
+        }
+        .card-text {
+            font-size: 1em;
+            color: #666;
+        }
+        .card-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        .card-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <img src="https://via.placeholder.com/350x200" alt="Card image">
+    <div class="card-body">
+        <h2 class="card-title">Enhanced Card Title</h2>
+        <p class="card-text">This is a more aesthetically pleasing card description.</p>
+        <a href="#" class="card-button">Learn More</a>
+    </div>
+</div>
+
+</body>
+</html>

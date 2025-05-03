@@ -1,0 +1,56 @@
+<p>gago</p>
+
+<div id="print_this">
+    <div class="ticket">
+        <img src="./logo.png" alt="Logo">
+        <p class="centered">RECEIPT EXAMPLE
+            <br>Address line 1
+            <br>Address line 2</p>
+        <table>
+            <thead>
+                <tr>
+                    <th class="quantity">Q.</th>
+                    <th class="description">Description</th>
+                    <th class="price">$$</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="quantity">1.00</td>
+                    <td class="description">ARDUINO UNO R3</td>
+                    <td class="price">$25.00</td>
+                </tr>
+                <tr>
+                    <td class="quantity">2.00</td>
+                    <td class="description">JAVASCRIPT BOOK</td>
+                    <td class="price">$10.00</td>
+                </tr>
+                <tr>
+                    <td class="quantity">1.00</td>
+                    <td class="description">STICKER PACK</td>
+                    <td class="price">$10.00</td>
+                </tr>
+                <tr>
+                    <td class="quantity"></td>
+                    <td class="description">TOTAL</td>
+                    <td class="price">$55.00</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="centered">Thanks for your purchase!
+            <br>parzibyte.me/blog</p>
+    </div>
+</div>
+
+<button id="btnPrint" class="bg-green-500 text-white px-4 py-2 mt-3 w-full rounded-lg">🖨️ Print Receipt</button>
+
+<script>
+    document.querySelector("#btnPrint").addEventListener("click", () => {
+        const printContent = document.querySelector("#print_this").innerHTML;
+        const originalContent = document.body.innerHTML;
+
+        document.body.innerHTML = printContent; // Show only the receipt
+        window.print(); // Print it
+        document.body.innerHTML = originalContent; // Restore the original page
+    });
+</script>

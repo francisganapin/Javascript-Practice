@@ -1,11 +1,19 @@
 const express = require('express');
+const fs = require('fs')
 const app = express();
 
+PORT = 8080
 
-app.get('/',(req,res) =>  {
-    res.send('Welcome to the express,js');
+app.get('/',(req,res) =>{
+    fs.readFile('index.html',(err,data) =>{
+        if(err){
+            return res.status(404).send('404 NOT Found');
+        }
+        res.setHeader('Content-Type','text/html');
+        res.send(data);
+    });
 });
 
-app.listen(3000,() =>{
-    console.log('Server is running on http://localhost:3000');
+app.listen(PORT,()=>{
+    console.log(`Server running on http://localhost:${PORT}`);
 });

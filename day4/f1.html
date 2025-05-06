@@ -1,0 +1,16 @@
+<img id="tgImage" src="image_2.png" alt="Toggle Image" width="200">
+
+<button onclick="toggleImage()">Toggle</button>
+
+
+
+<script>
+    function toggleImage(){
+            const img = document.getElementById('tgImage');
+            if(img.src.includes('image_2.png')){
+                img.src = 'image_3.png'; 
+            }else {
+                img.src = 'image_2.png';
+            }
+        }
+</script>

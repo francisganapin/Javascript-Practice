@@ -1,0 +1,16 @@
+<img id="imagetg" src="df.png" width="200">
+
+<button onclick="tgImage()">Toggle</button>
+
+
+<script>
+    const images = ['df.png','df1.png','df2.png'];
+    let index = 0;
+
+    function tgImage(){
+        index = (index + 1) % images.length;
+        document.getElementById('imagetg').src = images[index];
+    }
+
+
+</script>

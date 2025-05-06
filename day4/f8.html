@@ -1,0 +1,20 @@
+
+
+<p id="demo"></p>
+
+
+<script>
+    const fruits = new Map([
+        ['apple',500],
+        ['banana',300],
+        ['oranges',200]
+    ]);
+
+    let text = "";
+    fruits.forEach(function(value,key){
+        text += key + ' = ' + value + "<br>"
+    })
+
+    document.getElementById('demo').innerHTML = text;
+    
+</script>

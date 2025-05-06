@@ -1,0 +1,15 @@
+<label>
+    <input type="checkbox" onchanges="tg(this)"> Show new Image
+</label>
+
+<img id="checkImage" src="df.png" width="200">
+
+
+<script>
+
+function tg(checkbox){
+    const img = document.getElementById('checkImage');
+    img.src = checkbox.checked ? "df.png":"df1.png";
+}
+
+</script>

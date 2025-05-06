@@ -1,0 +1,14 @@
+<img id="toggleImage" src="image1.jpg" alt="An image" width="200">
+<button onclick="toggleVisibility()">Show/Hide</button>
+
+<script>
+    function toggleVisibility(){
+        const img = document.getElementById('toggleImage');
+        if (img.style.display == 'none')
+        {
+            img.style.display = 'block';
+        } else{
+            img.style.display = 'none';
+        }
+    }
+</script>

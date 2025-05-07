@@ -1,0 +1,16 @@
+<button id="button_a">Press me</button>
+<h3 id="heading_a"></h3>
+
+<script>
+    const button_a_a = document.querySelector('#button_a');
+    const heading_a_a = document.querySelector('#heading_a');
+
+    let count = 1;
+
+    button_a_a.onclick = () =>{
+        button_a_a.textContent = 'Try again!';
+        heading_a_a.textContent = `${count} click so far`;
+        count += 1;
+    }
+</script>
+

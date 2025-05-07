@@ -1,0 +1,29 @@
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<script>
+    let text='';
+    for (let i =0; i < 10; i++){
+        if( i===30 ) {break;}
+        text += 'The number is ' + i + '<br>';
+    }
+    document.getElementById('demo').innerHTML = text;
+</script>
+
+<script>
+    let text1='';
+    for (let i = 0; i < 10; i++){
+        if (i === 5) {break;}
+        text1 += 'Counting: ' + i + '<br>';
+    }
+    document.getElementById('demo2').innerHTML = text1;
+</script>
+
+<script>
+    let text2 ="";
+    for(let i = 0; i < 5; i++){
+        if(i ===2) { continue; }
+        text2 += 'Skip value 2:' + i + '<br>';
+    }
+    document.getElementById('demo3').innerHTML = text2;
+</script>

@@ -1,0 +1,8 @@
+function greet(name){
+    name = name ?? 'stranger';
+    console.log(`Hello, ${name}`);
+}
+
+greet(`alice`);
+greet(null);
+greet(undefined);

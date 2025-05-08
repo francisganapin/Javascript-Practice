@@ -1,0 +1,32 @@
+<form onsubmit="return validateForm()">
+    <input type='text' id="username" placeholder="Enter your name">
+    <input type="email" id="email" placeholder="Enter your email">
+    <input type="password" id="password" placeholder="Enter password">
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    function validateForm(){
+        let username = document.getElementById('username').value;
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+
+        let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+
+        if (username.trim() === ""){
+            alert('Please enter your name');
+            return false;
+        }
+
+        if(!email.match(emailPattern)){
+            alert('Please enter a valid email address');
+            return false;
+        }
+
+        if(password.length < 8){
+            alert('Password must be at least 8 character long');
+        }
+        return true;
+    }
+</script>

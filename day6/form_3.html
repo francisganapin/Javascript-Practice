@@ -1,0 +1,18 @@
+<form onsubmit="return validateForm()">
+    <input type="password" id="password" placeholder="Enter password">
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    function validateForm(){
+        let password = document.getElementById('password').value;
+
+        if(password.length < 8)
+
+        {
+            alert('Password must be at least 8 long');
+            return false
+        }
+        return true;
+    }
+</script>

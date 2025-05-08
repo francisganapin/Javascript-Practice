@@ -1,0 +1,18 @@
+<input type="number" id="demo">
+<button onclick="checkInput()">Enter a number</button>
+<p id="result"></p>
+
+<script>
+    function checkInput(){
+        let userInput = Number(document.getElementById('demo').value);
+        let resultText ="";
+
+        if(userInput > 10){
+            resultText ='The numb is greater than 10';
+        }
+        else{
+            resultText ='The number is 10 or less';
+        }
+        document.getElementById('result').innerText = resultText;
+    }
+</script>

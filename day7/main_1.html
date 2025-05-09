@@ -1,0 +1,17 @@
+<ul id="item-list"></ul>
+
+
+<script>
+    fetch("http://127.0.0.1:8000/items")
+    .then(response => response.json())
+    .then(data => {
+        const list = document.getElementById('item-list');
+        data.forEach(item =>{
+            const li = document.createElement('li');
+            li.textContent = `${item.name} - $${item.price}`;
+            list.appendChild(li);
+        });
+        
+    })
+    .catch(error => console.error('Error fetching data:',error)); 
+</script>

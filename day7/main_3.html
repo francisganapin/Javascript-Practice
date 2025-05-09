@@ -1,0 +1,17 @@
+<form id='myForm'>
+    Name: <input type="text" id="name"><br>
+    Age: <input type="number" id="age"><br>
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    const form = document.getElementById('myForm');
+    form.addEventListener('submit',function(event){
+        event.preventDefault();
+
+        const name = document.getElementById('name').values;
+        const age = parseInt(document.getElementById('age').value);
+
+        fetch('http://127.0.0.1')
+    })
+</script>

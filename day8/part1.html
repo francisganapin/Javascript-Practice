@@ -1,0 +1,12 @@
+<p id="demo"></p>
+
+
+<script>
+    const letters = new Set(['a','b','c']);
+
+    let text = "";
+    for (const x of letters){
+        text += x + '<br>';
+    }
+    document.getElementById('demo').innerHTML = text;
+</script>

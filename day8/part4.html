@@ -1,0 +1,26 @@
+<h2>User table from set</h2>
+
+<table border="1" id="userTable">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+</table>
+
+<script>
+     const users = new Set([
+        {name:'Alice',email:'alice@gmail.com'},
+        {name:'Bob',email:'bob@example.com'},
+        {name:'Charlie',email:'charlie@gmail.com'}
+     ]);
+
+     const table = document.getElementById('userTable');
+
+     users.forEach(function(user){
+        let row = table.insertRow();
+        let cell1 = row.insertCell(0);
+        let cell2 = row.insertCell(1);
+        cell1.innerHTML = user.name;
+        cell2.innerHTML = user.email;
+     });
+</script>

@@ -1,0 +1,30 @@
+
+
+<table border="1" id="userItem">
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>price</th>
+    </tr>
+</table>
+
+<script>
+    fetch('http://127.0.0.1:5000/api/item')
+    .then(response => response.json())
+    .then(
+        data =>{
+            const table = document.getElementById('userItem');
+
+            data.forEach((items,index)=>{
+               let row = table.insertRow();
+               let cell0 = row.insertCell(0);
+               let cell1 = row.insertCell(1);
+               let cell2 = row.insertCell(2);
+               
+               cell0.innerHTML = index +1;
+               cell1.innerHTML = items.item;
+               cell2.innerHTML = items.price;
+            });
+        })
+        .catch(error => console.error('Error fetching user:',error));
+</script>

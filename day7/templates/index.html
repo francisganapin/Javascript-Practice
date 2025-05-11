@@ -1,0 +1,24 @@
+<body>
+    <input type="text" id="nameInput" placeholder="Enter name">
+    <button onclick="sendData()">Send</button>
+    <p id="response"></p>
+
+</body>
+
+<script>
+    function sendData(){
+        const name = document.getElementById("nameInput").value;
+
+        fetch('http://127.0.0.1:5000/process',{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json',
+            },
+            body:JSON.stringify({name:name})
+        })
+        .then(res => res.json())
+        .then(data =>{
+           document.getElementById('response').innerHTML = data.message; 
+        });
+    }
+</script>

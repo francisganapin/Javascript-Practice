@@ -1,0 +1,15 @@
+<form id="myForm">
+    <input type="text" id="username" placeholder="Enter name"/>
+    <button type="submit">Submit</button>
+</form>
+
+
+<script>
+    const form = document.getElementById('myForm');
+
+    form.addEventListener('submit',(e) => {
+        e.preventDefault();
+        const name = document.getElementById('username').value;
+        console.log('Name submited',name);
+    });
+</script>

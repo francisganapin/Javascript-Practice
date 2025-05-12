@@ -1,0 +1,16 @@
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<div id="Myplot" style="width:100%;max-width:700px"></div>
+
+<script>
+    const data = [{
+        labels:['Apple','Banana','Oranges'],
+        values:[10,15,7],
+        type:'pie'
+    }];
+
+    const layout = {
+        title:'Fruit Sale(Pie Chart)'
+    };
+
+    Plotly.newPlot('Myplot',data,layout);
+</script>

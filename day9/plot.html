@@ -1,0 +1,19 @@
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<div id="Myplot" style="width:100%;max-width:700px"></div>
+
+<script>
+    const xArray = ["Italy","France","Spain","USA","Argentina"];
+    const yArray = [55, 49, 44, 24, 15];
+    
+    const data = [{
+        x: xArray,
+        y: yArray,
+        type: "bar",
+        orientation:"v",
+        marker: {color:"rgba(0,0,255)"}
+        }];
+
+    
+    const layout = {title:"World Wide Wine Production"};
+    Plotly.newPlot("Myplot",data,layout);
+</script>

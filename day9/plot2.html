@@ -1,0 +1,17 @@
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<div id="simpleBarChart" style="width:100%;max-width:600px;"></div>
+
+
+<script>
+    const data =[{
+        x:['Apple','Banana','Oranges'],
+        y:[10,15,7],
+        type:'bar'
+    }];
+
+    const layout = {
+        title:'Fruit Sales'
+    };
+    Plotly.newPlot('simpleBarChart',data,layout);
+</script>

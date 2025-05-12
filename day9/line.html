@@ -1,0 +1,17 @@
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<div id="simpleBarChart" style="width:100%;max-width:700px"></div>
+
+<script>
+    const data=[{
+        x:['Apple','Banana','Orange'],
+        y:[10,15,7],
+        type:'scatter',
+        mode: 'lines+markers',
+        line:{color:'blue'}
+    }];
+
+    const layout = {
+        title:'Fruit Sales Over Time'
+    };
+    Plotly.newPlot('simpleBarChart', data, layout);
+</script>

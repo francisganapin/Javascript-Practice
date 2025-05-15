@@ -1,0 +1,34 @@
+<form id="myForm2">
+
+    <label>Name:   </label>
+    <input type="text" id="name"><br>
+
+    <label>Email:  </label>
+    <input type="email" id="email"><br>
+
+    <label>Age:    </label>
+    <input type="number" id="age"><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+    <p id="output"></p>
+
+<script>
+    document.getElementById('myForm2').addEventListener('submit',function(event){
+        event.preventDefault();
+
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let age = document.getElementById('age').value;
+
+
+        if(name === '' | email === '' | age === '' ){
+            alert('Please fill in all Field.');
+            return;
+        }
+        let output = `Hello ${name}, your email is ${email} and you are ${age} years old`;
+        document.getElementById('output').textContent = output;
+    });
+
+</script>

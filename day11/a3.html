@@ -1,0 +1,20 @@
+<select id="gender">
+    <option value="">---Select---</option> 
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Other">Other</option>
+</select>
+
+<button onclick="submitGender()">Submit</button>
+
+
+<script>
+    function submitGender(){
+        let gender = document.getElementById('gender').value;
+        if(gender ===''){
+
+        }else{
+            console.log('Gender submitted',gender);
+        }
+    }
+</script>

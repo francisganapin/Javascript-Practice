@@ -1,0 +1,22 @@
+<input type="text" id="input1" value="10">
+<input type="text" id="input2" value="20">
+<input type="text" id="input3" value="30">
+<button onclick="getValues()">Get Values</button>
+
+<p id="result"></p>
+
+
+<script>
+    function getValues(){
+        let values = [];
+
+        for(let i = 1; i <= 3; i++){
+            let inputElement  = document.getElementById(`input${i}`);
+            
+            if(inputElement){
+                values.push(inputElement.value);
+            }
+        }
+        document.getElementById('result').innerText = `Values: ${values.join(',')}`;
+    }
+</script>

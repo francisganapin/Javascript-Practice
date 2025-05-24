@@ -1,0 +1,15 @@
+<p id="demo"></p>
+
+
+<script>
+    const person = {
+        firstName: 'John',
+        lastName:'Doe',
+        age:50,
+        eyecolor:'blue'
+    };
+
+    delete person['age'];
+
+    document.getElementById('demo').innerHTML = person.firstName + ' is ' + person.age + ' years old';
+</script>

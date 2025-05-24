@@ -1,0 +1,16 @@
+<input type="number" id="numInput" placeholder="Enter a number">
+<button onclick="multiplyValue()">Multiply</button>
+
+<p id="result"></p>
+
+<script>
+    function multiplyValue(){
+        const inputValue = document.getElementById('numInput').value;
+
+        const number = parseFloat(inputValue);
+
+        const multipliedValue = number * 2;
+
+        document.getElementById('result').innerHTML = `Result: ${multipliedValue}`
+    }
+</script>

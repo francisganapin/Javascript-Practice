@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #popup {
+      position: fixed;
+      top: 100px;
+      left: 20px;
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 15px 20px;
+      border: 1px solid #f5c6cb;
+      border-radius: 8px;
+      display: none; /* Hidden by default */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+<input type="text" id="myInput" placeholder="Enter a number">
+<button onclick="checkValue()">Check</button>
+
+<div id="popup">The value is 1!</div>
+
+<script>
+  function checkValue() {
+    const value = document.getElementById("myInput").value;
+    const popup = document.getElementById("popup");
+
+    if (value === "1") {
+      popup.style.display = "block";
+    } else {
+      popup.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>

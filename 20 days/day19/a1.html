@@ -1,0 +1,12 @@
+
+<input type="text" id="myInput" value="Hello world">
+<button onclick="getValue()">Get Value</button>
+
+<p id="output"></p>
+
+<script>
+    function getValue(){
+        const value = document.getElementById('myInput').value;
+        document.getElementById('output').innerText = 'Value: ' + value;
+    }
+</script>

@@ -1,0 +1,28 @@
+
+
+
+<button onclick="addItem()">Add new Item</button>
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+
+
+<script>
+    const items = document.getElementByClassName('item');
+    console.log('Initial:',items);
+
+    function addItem(){
+        const newDiv = document.createElement('div');
+        newDiv.className ='item';
+        newDiv.textContent = 'New Item' + (items.length + 1);
+        
+        document.body.appendChild(newDiv);
+
+        console.log('Update Lenght', items.length);
+        console.log('Items Now',items);
+
+    }
+
+
+
+
+</script>

@@ -1,0 +1,11 @@
+const temperature = [35,22,28,40,18]
+
+
+
+for(let temp of temperature){
+    if(temp > 30){
+        console.log(temp + " C is hot");
+    }else{
+        console.log(temp + " C is not hot");
+    }
+}

@@ -1,0 +1,16 @@
+<input type="text" id="myInput" placeholder="Enter a number">
+
+<button onclick="checkValue()">Check</button>
+
+
+<script>
+    function checkValue(){
+        const value = document.getElementById('myInput').value;
+
+        if(value === '1'){
+            alert('The value is 1!');
+        }else{
+            alert('The value is not 1');
+        }
+    }
+</script>

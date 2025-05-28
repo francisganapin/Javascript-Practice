@@ -1,0 +1,12 @@
+<input  type="text" class="username" placeholder="Enter username">
+<button id="btn">Check</button>
+<p class="output"></p>
+
+
+
+<script>
+    document.querySelector('#btn').addEventListener('click',() =>{
+        const username = document.querySelector('.username').value;
+        document.querySelector('.output').innerText = `Username: ${username}`;
+    });
+</script>

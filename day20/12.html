@@ -1,0 +1,17 @@
+<form id="studentForm">
+    <label><input type='radio' name='status' value='student'>Student</label>
+    <label><input type='radio' name='status' value='teacher'>Teacher</label>
+    <button type="button" onclick="getStatus()">Submit</button>
+</form>
+
+<script>
+    function getStatus(){
+        const selected = document.querySelector('input[name="status"]:checked');
+
+        if(selected){
+            alert('Selected gender ' + selected.value);
+        }else{
+            alert('Please select a gender. ');
+        }
+    }
+</script>

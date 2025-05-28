@@ -1,0 +1,13 @@
+<input type="text" id="bio" placeholder="Type something...."/>
+<p id="charCount">Charcater: 0</p>
+
+
+<script>
+    const input = document.getElementById('bio');
+    const counter = document.getElementById('charCount');
+
+
+    input.addEventListener('input',function(){
+        counter.textContent = 'Characters: ' + input.value.length;
+    });
+</script>

@@ -1,0 +1,19 @@
+<form id="userForm">
+    <input type="text" name="fname" placeholder="First name">
+    <input type="text" name="lname" placeholder="Last name">
+    <button type="submit">Submit</button>
+</form>
+
+<p id="result"></p>
+
+
+<script>
+    document.getElementById('userForm').addEventListener('submit',function(event){
+        event.preventDefault();
+
+        const fname = this.fname.value;
+        const lname = this.lname.value;
+
+       document.getElementById('result').innerText = `Full name: ${fname} ${lname}`; 
+    });
+</script>

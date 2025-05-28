@@ -1,0 +1,16 @@
+<input type="text" name="firstName" placeholder="First Name" />
+<input type="text" name="lastName" placeholder="Last Name" />
+
+<button onclick="getData()">Get Data</button>
+
+<script>
+    function getData(){
+        const inputs = document.querySelectorAll('input[name]');
+        const data = {};
+        inputs.forEach(input => {
+            data[input.name] = input.value;
+
+        });
+        console.log(data);
+    }
+</script>

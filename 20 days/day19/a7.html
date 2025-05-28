@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Toast container */
+    #toast {
+      position: fixed;
+      top: 100px;
+      left: -300px; /* Start off-screen */
+      background-color: #333;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: left 0.5s ease; /* Smooth slide */
+      z-index: 9999;
+    }
+
+    /* Active state - slides in */
+    #toast.show {
+      left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<input type="text" id="myInput" placeholder="Enter 1 to show toast">
+<button onclick="checkValue()">Check</button>
+
+<!-- Toast -->
+<div id="toast">Value is 1!</div>
+
+<script>
+  function checkValue() {
+    const value = document.getElementById("myInput").value;
+    const toast = document.getElementById("toast");
+
+    if (value === "1") {
+      toast.classList.add("show");
+
+      // Auto hide after 3 seconds
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+
+
+<p>this is the first paragraph.</p>
+<p>this is the second paragraph</p>
+<p>this is the third paragraph</p>
+
+
+<button onclick="showFirstNodeName()">Show First Paragraph Node Name</button>
+
+
+<script>
+    function showFirstNodeName(){
+        const paragraph = document.querySelectorAll('p');
+        alert(paragraph[0].nodeName);
+    }
+</script>

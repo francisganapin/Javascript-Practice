@@ -1,0 +1,17 @@
+<form id="genderForm">
+    <label><input type="radio" name="gender" value="male">Male</label>
+    <label><input type="radio" name="gender" value="female">Female</label>
+    <button type="button" onclick="getGender()">Submit</button>
+</form>
+
+<script>
+    function getGender(){
+        const selected = document.querySelector('input[name="gender"]:checked');
+
+        if(selected){
+            alert('Selected gender: ' + selected.value);
+        }else{
+            alert('Please select a gender. ');
+        }
+    }
+</script>

@@ -1,0 +1,12 @@
+<form id="userForm">
+    <input type="text" name="username" />
+    <input type="password" name="password">
+    <button type="button" onclick="clearForm()">Clear</button>
+</form>
+
+<script>
+    function clearForm(){
+        const form = document.getElementById('userForm');
+        form.reset();
+    }
+</script>

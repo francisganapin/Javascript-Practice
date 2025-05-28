@@ -1,0 +1,17 @@
+
+<head>loop through input</head>
+
+
+<input type="text" placeholder="Name" class="info" />
+<input type="email" placeholder="Email" class="info" />
+<input type="tel" placeholder="Phone" class="info"/>
+<button onclick="getInputValues()">Get Values</button>
+
+<script>
+    function getInputValues(){
+        const input = document.querySelectorAll('.info');
+        input.forEach(input =>{
+           console.log(input.ariaPlaceholder + ':',input.value); 
+        });
+    }
+</script>

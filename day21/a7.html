@@ -1,0 +1,18 @@
+<ul id="bookList"></ul>
+
+
+<script>
+    const books = [
+        {title:'1984',author:'Orwell'},
+        {title:'The Hobbit',author:'Tolkien'},
+        {title:'Dracula',author:'Stoker'}
+        ];
+
+        const booksList = document.getElementById('bookList');
+
+        books.forEach(book =>{
+            const li = document.createElement('li');
+            li.textContent = `${book.title} by ${book.author}`;
+            booksList.appendChild(li)
+        })
+</script>

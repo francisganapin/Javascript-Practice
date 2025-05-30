@@ -1,0 +1,19 @@
+<input type="text" id="nameInput" placeholder="Enter your name">
+<button onclick="submitName()">Send</button>
+<p id="greeting"></p>
+
+
+<script>
+    async function submitName(){
+        const name = document.getElementById('nameInput').value;
+        const response = await fetch('http://127.0.0.1:5000/greet',{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify({name:name})
+        });
+        const data = await response.json();
+        document.getElementById('greeting').textContent = data.greeting;
+    }
+</script>

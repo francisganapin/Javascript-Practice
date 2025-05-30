@@ -1,0 +1,26 @@
+<button onclick="getMessage()">Fetch Get</button>
+<p id="get-result"></p>
+
+<button onclick="postName()">Send Post</button>
+<p id="post-result"></p>
+
+
+<script>
+    async function getMessage(){
+        const res = await fetch('http://127.0.0.1:5000/hello');
+        const data = await res.json();
+        document.getElementById('get-result').textContent = data.message;
+    }
+
+    async function postName(){
+        const res = await fetch('http://127.0.0.1:5000/greet',{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify({name:'Well'})
+        });
+        const data = await res.json();
+        document.getElementById('post-result').textContent = data.greeting;
+    }
+</script>

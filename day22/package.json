@@ -1,0 +1,17 @@
+{
+  "name": "day22",
+  "version": "1.0.0",
+  "main": "a3.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1",
+    "sqlite3": "^5.1.7"
+  }
+}

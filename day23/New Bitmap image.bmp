@@ -1,0 +1,14 @@
+function createUser(name,age){
+    return{
+        name,
+        age,
+        greet(){
+            console.log(`hi, i'm ${name} and I'm ${age} years old.`);
+        }
+    };
+}
+
+const user1 = createUser('Francis',25);
+const user2 = createUser('Jane',30);
+
+user1.greet();

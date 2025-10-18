@@ -1,0 +1,37 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>TypeScript Edit by ID Example</title>
+
+        <style>
+            table,th,td{
+                border:1px solid gray;
+                border-collapse:collapse;
+                padding:6px 10px;
+            }
+            table {width:100%;}
+            input {margin:5px;}
+            button {margin:5px;}
+        </style>
+    </head>
+    <body>  
+        <h2>Employee Manager</h2>
+
+        <form id="addForm">
+            <input id="empName" placeholder="Employee name" required />
+            <input id="empRole" placeholder="Role" required />
+            <button type="submit">Add Employee</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th><th>Name</th><th>Role</th><th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTable"></tbody>
+
+            <script src="script4.js"></script>
+        </table>
+    </body>
+</html>

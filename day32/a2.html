@@ -1,0 +1,16 @@
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<div x-data="{cars:['Saab','Volvo','BMW']}">
+    <p x-text="cars.join(',')"></p>
+</div>
+
+
+<div x-data="{cars:['Saab','Volvo','BMW']}">
+
+    <ul>
+        <template x-for="car in cars" :key="car">
+            <li x-text="car"></li>
+        </template>
+    </ul>
+
+</div>

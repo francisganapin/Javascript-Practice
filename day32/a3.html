@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpine Chart Example</title>
+
+  <!-- Alpine.js -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="p-5">
+
+  <div 
+    x-data="chartComponent()" 
+    x-init="initChart()"
+    class="max-w-md mx-auto"
+  >
+    <h2 class="text-xl font-bold mb-3">Car Sales</h2>
+
+    <canvas id="salesChart" width="400" height="300"></canvas>
+
+    <button @click="updateChart()" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">
+      Randomize Data
+    </button>
+  </div>
+
+  <script>
+    function chartComponent() {
+      return {
+        chart: null,
+        data: [12, 19, 3, 5, 2, 3],
+        labels: ['Saab', 'Volvo', 'BMW', 'Toyota', 'Ford', 'Honda'],
+
+        initChart() {
+          const ctx = document.getElementById('salesChart');
+          this.chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: this.labels,
+              datasets: [{
+                label: 'Units Sold',
+                data: this.data,
+                borderWidth: 1,
+                backgroundColor: ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#6366F1', '#F97316']
+              }]
+            },
+            options: {
+              scales: {
+                y: { beginAtZero: true }
+              }
+            }
+          });
+        },
+
+        updateChart() {
+          // Generate random data
+          this.data = this.data.map(() => Math.floor(Math.random() * 25));
+          this.chart.data.datasets[0].data = this.data;
+          this.chart.update();
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS Responsive Background</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      transition: background 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+
+
+<script>
+    function changesBackground(){
+        const width = window.innerWidth;
+
+
+        if(width <= 600){
+            document.body.style.background = 'lightcoral';
+        }else if (width <= 1024){
+            document.body.style.background = 'lightblue';
+        }else{
+            document.body.style.background = 'lightgreen';
+        }
+    }
+    changesBackground();
+
+    window.addEventListener('resize',changesBackground);
+</script>
+
+</body>
+</html>

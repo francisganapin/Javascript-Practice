@@ -1,0 +1,43 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <title>Clinic Patient Registraion</title>
+        <style>
+            body { font-family: Arial; margin: 20px; }
+            input, button { margin: 5px; padding: 8px; }
+            table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+            th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+          </style>
+          
+    </head>
+    <body>
+
+        <h1>Clinic Patient Registraion</h1>
+
+        <form id="patientForm">
+            <input type="text" id="names" placeholder="Full Name" required />
+            <input type="number" id="age" placeholder="Age" required />
+            <input type="text" id="diagnosis" placeholder="Diagnosis" required />
+            <button type="submit">Add Patient</button>
+        </form>
+
+        <h2>Registered Patient</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Diagnosis</th>
+                </tr>
+            </thead>
+            <tbody id="patientTable"></tbody>
+        </table>
+
+
+
+        <script src="script1.js"></script>
+
+    </body>
+</html>

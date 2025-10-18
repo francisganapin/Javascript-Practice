@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>JS Example</title>
+    </head>
+
+    <body>
+        <h1  id="greeting">Hello</h1>
+        <button id="btn">Changes Text</button>
+    </body>
+
+    <script>
+        const button = document.getElementById('btn');
+        const greeting = document.getElementById('greeting');
+
+        button.addEventListener('click',() => {
+            greeting.textContent = 'Welcome to javascript!';
+            greeting.style.color = 'blue';
+        });
+    </script>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Search Filter</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 8px;
+      background: #f1f1f1;
+      margin-bottom: 8px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    li.hide {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🔍 Search Names</h2>
+    <input type="text" id="searchInput" placeholder="Type to search...">
+    <ul id="nameList">
+      <li>Francis</li>
+      <li>Angela</li>
+      <li>Mark</li>
+      <li>Jenny</li>
+      <li>Carlo</li>
+      <li>Rose</li>
+      <li>Michael</li>
+      <li>Sophia</li>
+    </ul>
+  </div>
+
+  <script>
+
+    const searchInput = document.getElementById('searchInput');
+    const nameList = document.getElementById('nameList');
+    const names = nameList.getElementsByTagName('li');
+
+    searchInput.addEventListener('keyup',function(){
+        const filter = searchInput.value.toLowerCase();
+
+        for (let i = 0; i < names.length; i++){
+            const name = names[i].textContent.toLowerCase();
+
+            if(name.includes(filter)){
+                names[i].classList.remove('hide')
+            }else{
+                names[i].classList.add('hide');
+            }
+        }
+    });
+
+
+
+  </script>
+</body>
+</html>

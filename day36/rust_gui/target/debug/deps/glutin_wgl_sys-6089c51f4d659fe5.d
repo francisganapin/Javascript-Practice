@@ -1,0 +1,11 @@
+C:\Users\francis\OneDrive\Desktop\Practice\Practice_JavaScript\day36\rust_gui\target\debug\deps\glutin_wgl_sys-6089c51f4d659fe5.d: C:\Users\francis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\glutin_wgl_sys-0.5.0\src\lib.rs C:\Users\francis\OneDrive\Desktop\Practice\Practice_JavaScript\day36\rust_gui\target\debug\build\glutin_wgl_sys-a10cbf9224272754\out/wgl_bindings.rs C:\Users\francis\OneDrive\Desktop\Practice\Practice_JavaScript\day36\rust_gui\target\debug\build\glutin_wgl_sys-a10cbf9224272754\out/wgl_extra_bindings.rs
+
+C:\Users\francis\OneDrive\Desktop\Practice\Practice_JavaScript\day36\rust_gui\target\debug\deps\libglutin_wgl_sys-6089c51f4d659fe5.rlib: C:\Users\francis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\glutin_wgl_sys-0.5.0\src\lib.rs C:\Users\francis\OneDrive\Desktop\Practice\Practice_JavaScript\day36\rust_gui\target\debug\build\glutin_wgl_sys-a10cbf9224272754\out/wgl_bindings.rs C:\Users\francis\OneDrive\Desktop\Practice\Practice_JavaScript\day36\rust_gui\target\debug\build\glutin_wgl_sys-a10cbf9224272754\out/wgl_extra_bindings.rs
+
+C:\Users\francis\OneDrive\Desktop\Practice\Practice_JavaScript\day36\rust_gui\target\debug\deps\libglutin_wgl_sys-6089c51f4d659fe5.rmeta: C:\Users\francis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\glutin_wgl_sys-0.5.0\src\lib.rs C:\Users\francis\OneDrive\Desktop\Practice\Practice_JavaScript\day36\rust_gui\target\debug\build\glutin_wgl_sys-a10cbf9224272754\out/wgl_bindings.rs C:\Users\francis\OneDrive\Desktop\Practice\Practice_JavaScript\day36\rust_gui\target\debug\build\glutin_wgl_sys-a10cbf9224272754\out/wgl_extra_bindings.rs
+
+C:\Users\francis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\glutin_wgl_sys-0.5.0\src\lib.rs:
+C:\Users\francis\OneDrive\Desktop\Practice\Practice_JavaScript\day36\rust_gui\target\debug\build\glutin_wgl_sys-a10cbf9224272754\out/wgl_bindings.rs:
+C:\Users\francis\OneDrive\Desktop\Practice\Practice_JavaScript\day36\rust_gui\target\debug\build\glutin_wgl_sys-a10cbf9224272754\out/wgl_extra_bindings.rs:
+
+# env-dep:OUT_DIR=C:\\Users\\francis\\OneDrive\\Desktop\\Practice\\Practice_JavaScript\\day36\\rust_gui\\target\\debug\\build\\glutin_wgl_sys-a10cbf9224272754\\out

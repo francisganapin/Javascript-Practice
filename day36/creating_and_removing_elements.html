@@ -1,0 +1,15 @@
+<button id="add">Add Item</button>
+<ul id='list'></ul>
+
+
+<script>
+    const add = document.getElementById('add');
+    const list = document.getElementById('list');
+
+    add.addEventListener('click',() =>
+    {
+        const li = document.createElement('li');
+        li.textContent = 'New item';
+        list.appendChild(li);
+    });
+</script>

@@ -1,0 +1,15 @@
+<button id="add">Add Number</button>
+<ul id="numbers"></ul>
+
+<script>
+  const ul = document.getElementById("numbers");
+  const add = document.getElementById("add");
+  let count = 5;
+
+  add.addEventListener("click", () => {
+    count++;
+    const li = document.createElement("li");
+    li.textContent = `Number ${count}`;
+    ul.appendChild(li);
+  });
+</script>

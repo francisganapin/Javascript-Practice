@@ -1,0 +1,10 @@
+C:\Users\francis\OneDrive\Desktop\Practice\Practice_JavaScript\day36\rust_gui\target\debug\deps\arboard-6c73c5e8d0e2d7f4.d: C:\Users\francis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\lib.rs C:\Users\francis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\common.rs C:\Users\francis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\platform\mod.rs C:\Users\francis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\platform\windows.rs
+
+C:\Users\francis\OneDrive\Desktop\Practice\Practice_JavaScript\day36\rust_gui\target\debug\deps\libarboard-6c73c5e8d0e2d7f4.rlib: C:\Users\francis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\lib.rs C:\Users\francis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\common.rs C:\Users\francis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\platform\mod.rs C:\Users\francis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\platform\windows.rs
+
+C:\Users\francis\OneDrive\Desktop\Practice\Practice_JavaScript\day36\rust_gui\target\debug\deps\libarboard-6c73c5e8d0e2d7f4.rmeta: C:\Users\francis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\lib.rs C:\Users\francis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\common.rs C:\Users\francis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\platform\mod.rs C:\Users\francis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\platform\windows.rs
+
+C:\Users\francis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\lib.rs:
+C:\Users\francis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\common.rs:
+C:\Users\francis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\platform\mod.rs:
+C:\Users\francis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\platform\windows.rs:

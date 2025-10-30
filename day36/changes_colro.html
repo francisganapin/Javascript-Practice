@@ -1,0 +1,13 @@
+<button id="colorBtn">Change Color</button>
+<p id="text">Hello</p>
+
+
+<script>
+    const text = document.getElementById('text');
+    const btn = document.getElementById('colorBtn');
+
+    btn.addEventListener('click',() =>{
+        text.style.color = 'red';
+        text.style.fontSize = '24px';
+    });
+</script>

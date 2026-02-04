@@ -1,0 +1,94 @@
+# Walkthrough: Implementing the Imperative User Filter
+
+You asked how to use the imperative loop snippet. To make this run, you need a complete Java file structure, including imports and a `User` class definition.
+
+## 1. The Complete Runnable Code
+
+You can copy this entire block into a file named **`Main.java`**.
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+// 1. We need a User class to make the code work
+class User {
+    private String name;
+    private boolean active;
+
+    public User(String name, boolean active) {
+        this.name = name;
+        this.active = active;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+}
+
+// 2. The Main class where the program starts
+public class Main {
+    public static void main(String[] args) {
+        // Setup: Create some dummy data
+        List<User> users = new ArrayList<>();
+        users.add(new User("Alice", true));
+        users.add(new User("Bob", false));
+        users.add(new User("Charlie", true));
+
+        // --- ERROR FREE CODE SNIPPET STARTS HERE ---
+        
+        // This is the specific code you asked about:
+        List<String> userNames = new ArrayList<>();
+        for (User user : users) {
+            if (user.isActive()) {
+                userNames.add(user.getName());
+            }
+        }
+        
+        // --- CODE SNIPPET ENDS HERE ---
+
+        // Output results to verify
+        System.out.println("Active Users: " + userNames);
+    }
+}
+```
+
+## 2. Implementation Guide: How to Insert This
+
+If you are working effectively in an existing project:
+
+1.  **Locate your Service/Logic Class**: Find the class where you process user data (e.g., `UserService.java`).
+2.  **Paste inside a method**: You cannot put the `for` loop directly inside a `class` body. It **must** be inside a method (function).
+
+**Example of insertion:**
+
+```java
+public class UserService {
+
+    // INSERT IT HERE
+    public List<String> getActiveUserNames(List<User> users) {
+        List<String> userNames = new ArrayList<>(); 
+        for (User user : users) {
+            if (user.isActive()) {
+                userNames.add(user.getName());
+            }
+        }
+        return userNames;
+    }
+}
+```
+
+## 3. Pros and Cons of this Approach
+
+### Pros
+*   **Easy to Debug**: You can place a breakpoint on the `if` statement or the `add` line and see exactly what happens for every single user.
+*   **Performance (Micro-optimization)**: For varying simple loops or very small lists, this raw `for-loop` is technically faster than creating a Stream object (though usually negligible).
+*   **Familiarity**: Any Java developer from juniors to seniors understands this immediately without knowing functional concepts.
+
+### Cons
+*   **Boilerplate**: You have to manually create the `userNames` list, write the loop syntax, and handle the `add` logic. It takes 5-6 lines to do what could be done in 1-2 lines.
+*   **Imperative State**: You are mutating the `userNames` list. If you had multiple threads trying to add to this list, you would need complex synchronization logic to prevent crashes.
+*   **Harder to Parallelize**: To make this run faster on a multi-core CPU, you would have to rewrite the entire loop logic manually.

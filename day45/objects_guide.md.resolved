@@ -1,0 +1,109 @@
+# Objects Guide
+
+You built a Todo List with **Arrays** of strings (`["Eat", "Sleep"]`).
+Now, let's make it smarter using **Objects**. This allows us to track if a task is "Done" or "Not Done".
+
+## 1. Update HTML (`index.html` or new file)
+
+We need a little CSS to show the cross-out effect.
+
+```html
+<hr>
+<h2>Todo List with Objects (Check off items)</h2>
+<style>
+    .done {
+        text-decoration: line-through;
+        color: gray;
+    }
+</style>
+
+<input type="text" id="objInput" placeholder="New Task...">
+<button id="objAddBtn">Add</button>
+<ul id="objList"></ul>
+
+<script src="objects.js"></script>
+```
+
+## 2. The JavaScript Code (`objects.js`)
+
+Create `objects.js` (or use internal script).
+
+```javascript
+// A. DATA: Array of OBJECTS instead of strings
+// Each object has a 'text' and a 'completed' status
+let tasks = [
+    { text: "Learn Objects", completed: false },
+    { text: "Do Laundry", completed: true }
+    // { text: "Sleep", completed: false }
+];
+
+let list = document.getElementById("objList");
+let btn = document.getElementById("objAddBtn");
+
+function render() {
+    list.innerHTML = "";
+
+    // Loop through objects
+    tasks.forEach(function(task, index) {
+        let li = document.createElement("li");
+        
+        // 1. Show the text
+        li.innerText = task.text;
+        
+        // 2. If completed, add the CSS class
+        if (task.completed === true) {
+            li.classList.add("done");
+        }
+
+        // 3. Click to toggle 'completed' status
+        li.addEventListener("click", function() {
+            // Flip true to false, or false to true
+            task.completed = !task.completed;
+            
+            // Re-draw the list to show changes
+            render();
+        });
+
+        list.appendChild(li);
+    });
+}
+
+render();
+
+// B. Add new Object
+btn.addEventListener("click", function() {
+    let input = document.getElementById("objInput");
+    
+    if (input.value !== "") {
+        // Create a NEW OBJECT
+        let newObj = {
+            text: input.value,
+            completed: false
+        };
+        
+        tasks.push(newObj);
+        render();
+        input.value = "";
+    }
+});
+```
+
+## Explanation & "How To"
+
+### Objects (`{ key: value }`)
+**Goal:** Group related data together.
+*   Instead of just `"Learn Js"`, we have `{ text: "Learn JS", completed: false }`.
+*   Access data using dot notation: `task.text`, `task.completed`.
+
+### Boolean Logic (`!task.completed`)
+*   `!` means "NOT".
+*   If `completed` is `true`, `!completed` is `false`.
+*   This is a handy switch to toggle values on and off.
+
+### Why use Objects?
+**Pros:**
+*   You can store much more info (e.g., `{ text: "Pay Bill", priority: "High", dueDate: "Tomorrow" }`).
+*   Real-world apps almost always use Arrays of Objects (like a list of Users, Products, or Tweets).
+
+**Cons:**
+*   Slightly more syntax to write than a simple list of strings.

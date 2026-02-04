@@ -1,0 +1,93 @@
+# Walkthrough: Modernizing Your Java Code
+
+You just wrote [a1.java](file:///c:/Users/francis/OneDrive/Desktop/Practice/Practice_JavaScript/day44/a1.java) using the "classic" style. Now let's see how much less code you need to write using modern Java features.
+
+## Step 1: Upgrading to Records (`a2.java`)
+
+In [a1.java](file:///c:/Users/francis/OneDrive/Desktop/Practice/Practice_JavaScript/day44/a1.java), your [User](file:///c:/Users/francis/OneDrive/Desktop/Practice/Practice_JavaScript/day44/a1.java#4-21) class took up ~15 lines just to hold data. **Java Records** (Java 14+) do this in **1 line**.
+
+**Create a new file `a2.java` and paste this:**
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+// [NEW] "record" replaces "class". 
+// It automatically creates the constructor, getters, toString(), etc.
+// Note: Instead of getName(), the accessor is just name().
+record User(String name, boolean active) {}
+
+public class a2 {
+    public static void main(String[] args) {
+        
+        List<User> users = new ArrayList<>();
+        users.add(new User("user1", true));
+        users.add(new User("user2", false));
+        users.add(new User("user3", true));
+
+        List<String> userNames = new ArrayList<>();
+        
+        for(User user : users) {
+            // [CHANGE] use user.active() instead of user.isActive()
+            if(user.active()) {
+                // [CHANGE] use user.name() instead of user.getName()
+                userNames.add(user.name());
+            }
+        }
+        
+        System.out.println(userNames);
+    }
+}
+```
+
+### What Changed?
+*   **Pros**: You deleted ~15 lines of boilerplate code. `record User(...)` handles everything.
+*   **Cons**: You can't change the data inside a `record` once it is created (it is immutable).
+
+---
+
+## Step 2: Upgrading to Streams (`a3.java`)
+
+Now let's replace the `for` loop with a **Stream**. This is the "Functional" way to do it.
+
+**Create a new file `a3.java` and paste this:**
+
+```java
+import java.util.List;
+import java.util.stream.Collectors;
+
+record User(String name, boolean active) {}
+
+public class a3 {
+    public static void main(String[] args) {
+        
+        // [TIP] List.of is a faster way to make a small list (Java 9+)
+        List<User> users = List.of(
+            new User("user1", true),
+            new User("user2", false),
+            new User("user3", true)
+        );
+
+        // [NEW] The Stream Pipeline
+        List<String> userNames = users.stream()         // 1. Start the stream flow
+            .filter(User::active)                       // 2. Keep only active users
+            .map(User::name)                            // 3. Transform User -> String (name)
+            .toList();                                  // 4. Collect results back into a List (Java 16+)
+
+        System.out.println(userNames);
+    }
+}
+```
+
+### What Changed?
+*   **Pros**: 
+    *   No empty list creation (`new ArrayList<>`).
+    *   Readability: "Stream -> filter this -> map to that -> to list".
+    *   `List.of(...)` is cleaner than `add(), add(), add()`.
+*   **Cons**: 
+    *   Debugging inside the `.map` or `.filter` can sometimes be slightly harder than a simple loop breakpoint.
+
+### Summary
+*   **[a1.java](file:///c:/Users/francis/OneDrive/Desktop/Practice/Practice_JavaScript/day44/a1.java)**: Classic Style (Good to know, verbose).
+*   **`a2.java`**: Records (Great for data holding).
+*   **`a3.java`**: Records + Streams (Modern Professional Standard).

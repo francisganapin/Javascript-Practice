@@ -1,0 +1,50 @@
+<h2>Todo List (Arrays & Loops)</h2>
+
+
+
+<input type="text" id="todoInput" placeholder="Add Item">
+<button id="addBtn">Add Task</button>
+
+
+<ul id="todoList">
+
+</ul>
+
+<script>
+
+    let myItem = ['Learn Js', 'Eat Lunch', 'Sleep'];
+
+    let listElement = document.getElementById('todoList');
+    let addBtn = document.getElementById('addBtn');
+
+    function renderTask() {
+
+        listElement.innerHTML = "";
+
+        myItem.forEach(function (task) {
+
+            let li = document.createElement('li');
+            li.innerText = task;
+            listElement.appendChild(li);
+        });
+    }
+
+    renderTask();
+
+    addBtn.addEventListener('click', function () {
+        let input = document.getElementById('todoInput');
+        let newTask = input.value;
+
+        if (newTask !== "") {
+
+            myItem.push(newTask);
+            renderTask();
+            input.value = "";
+        }
+        else {
+            alert('Please enter a task!');
+        }
+    });
+
+
+</script>

@@ -1,0 +1,17 @@
+
+<p id="output"></p>
+
+<script>
+    function sum(a,b){
+        return a + b;
+    }
+
+    const obj = {
+        num1:10,
+        num2:20,
+        sum:window.sum(10,20),
+    }
+
+    document.getElementById('output').innerHTML += "The objects is: " +
+    JSON.stringify(obj);
+</script>

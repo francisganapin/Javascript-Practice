@@ -1,0 +1,90 @@
+# Arrays and Loops Guide
+
+Now that you know how to handle clicks and inputs, let's handle **Lists** of data.
+
+## 1. Update HTML (`index.html` or new file)
+
+Add this section:
+
+```html
+<hr>
+<h2>Todo List (Arrays & Loops)</h2>
+<input type="text" id="todoInput" placeholder="Enter task...">
+<button id="addBtn">Add Task</button>
+
+<ul id="todoList">
+    <!-- Tasks will appear here -->
+</ul>
+
+<script src="arrays_loops.js"></script>
+```
+
+## 2. The JavaScript Code (`arrays_loops.js`)
+
+Create a file named `arrays_loops.js` (or use internal script) and add this:
+
+```javascript
+// A. Create an Array to store our tasks
+let myTasks = ["Learn JS", "Eat Lunch", "Sleep"];
+
+let listElement = document.getElementById("todoList");
+let addBtn = document.getElementById("addBtn");
+
+// Function to Show (Render) the list
+function renderTasks() {
+    // 1. Clear the current HTML inside the list so we don't duplicate
+    listElement.innerHTML = "";
+
+    // 2. Loop through every task in our Array
+    myTasks.forEach(function(task) {
+        // Create a new <li> element
+        let li = document.createElement("li");
+        li.innerText = task;
+        
+        // Add it to the <ul>
+        listElement.appendChild(li);
+    });
+}
+
+// Initial render to show the default items
+renderTasks();
+
+// B. Add new items
+addBtn.addEventListener("click", function() {
+    let input = document.getElementById("todoInput");
+    let newTask = input.value;
+
+    if (newTask !== "") { // Simple validation: don't add empty tasks
+        // Add to our Array
+        myTasks.push(newTask);
+        
+        // Update the screen
+        renderTasks();
+        
+        // Clear the input box
+        input.value = "";
+    } else {
+        alert("Please enter a task!");
+    }
+});
+```
+
+## Explanation & "How To"
+
+### Arrays (`[]`)
+**Goal:** Store a list of things in one variable.
+*   `let list = ["A", "B", "C"];`
+*   **`push()`**: Adds a new item to the end of the list.
+
+### Loops (`forEach`)
+**Goal:** Do the same thing for every item in a list.
+*   `myTasks.forEach(function(item) { ... })`: Runs the code inside `{}` once for "Learn JS", once for "Eat Lunch", etc.
+
+### `innerHTML = ""` vs `appendChild`
+*   **`innerHTML = ""`**: Wipes out everything inside an element. We do this before re-drawing the list so we don't see the old items + new items (duplicates).
+*   **`document.createElement("li")`**: Creates a fresh HTML tag in memory.
+*   **`appendChild(li)`**: Actually puts that fresh tag into the page so the user can see it.
+
+### Pros & Cons of this approach
+*   **Pros:** This is the foundation of modern apps (like React, Vue). You have "State" (the array) and "UI" (the HTML), and you sync them.
+*   **Cons:** Re-rendering the *whole* list every time you add one item can be slow if you have 10,000 items (but for 50 items, it's instant).

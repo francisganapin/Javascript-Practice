@@ -1,0 +1,72 @@
+<style>
+    .done {
+        text-decoration: line-through;
+        color: gray;
+    }
+</style>
+
+
+<input type="text" id="objInput" placeholder="New Task....">
+<button id="objAddBtn">Add</button>
+<ul id="objList"></ul>
+
+
+
+<script>
+
+    let tasks = [
+        { text: "Learn objects", completed: false },
+        { text: "Do Laundry", completed: true }
+    ];
+
+    let list = document.getElementById('objList');
+    let addBtn = document.getElementById('objAddBtn');
+
+    function render() {
+
+        list.innerHTML = "";
+
+        task.forEach(function (task, index) {
+            let li = document.createElement('li');
+
+            li.innerText = task.text;
+
+            if (task.completed === true) {
+                li.classList.add('done');
+            }
+
+            li.addEventListener('click', function () {
+
+
+                task.completed = !task.completed;
+                render();
+
+            });
+
+            list.appendChild(li);
+        });
+
+
+    }
+    render();
+
+    btn.addEventListener('click', function () {
+
+        let input = document.getElementById('objInput');
+
+
+        if (input.value !== "") {
+
+            let newObj = {
+                text: input.value,
+                completed: false
+            };
+            task.push(newObj);
+            render();
+            input.value = "";
+        }
+
+
+    });
+
+</script>

@@ -1,0 +1,45 @@
+<div id="box" style="width: 100px; height:
+ 100px; background-color: lightcyan;
+ margin-bottom: 10px;">I am a box</div>
+
+
+<button class="color-btn" data-color="red">Turn Red</button>
+<button class="color-btn" data-color="green">Turn Green</button>
+<button class="color-btn" data-color="blue">Turn Blue</button>
+
+<button id="toggleBtn">Toggle Dark Mode</button>
+
+<style>
+    .dark-mode {
+        background-color: black;
+        color: white;
+        border: 2px solid white;
+    }
+</style>
+
+
+<script>
+
+    let colorButtons = document.querySelectorAll('.color-btn');
+    let box = document.getElementById('box');
+
+    colorButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+
+            let color = btn.getAttribute('data-color');
+            box.style.backgroundColor = color;
+            box.innerText = 'I am now ' + color;
+        });
+    });
+
+    let toggleBtn = document.getElementById('toggleBtn');
+
+
+    toggleBtn.addEventListener('click', function () {
+        box.classList.toggle('dark-mode')
+    });
+
+
+
+
+</script>

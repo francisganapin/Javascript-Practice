@@ -1,0 +1,55 @@
+# Beginner Activities Guide
+
+Here is the code and explanation for the Beginner Activities.
+
+## The Code
+
+You can copy this into your [beginner.js](file:///c:/Users/francis/OneDrive/Desktop/Practice/Practice_JavaScript/day45/beginner.js) file.
+
+```javascript
+// 1. Create a variable storing your full name
+let fullName = "Francis Ganapin";
+
+// 2. Display it using console.log()
+console.log(fullName);
+
+// 3. Show a greeting using alert()
+alert("Hello " + fullName);
+```
+
+## Explanation & "How To"
+
+### 1. Variables
+**Goal:** Store data (like your name) so we can use it later.
+
+**How to insert:**
+Replace your current `String full_name = ...` with `let fullName = ...`.
+*   **Correction:** In JavaScript, we don't specify the type like `String`. We just use keywords like `let`, `const`, or `var`.
+
+**Pros & Cons of different keywords:**
+*   **`const`** (Constant)
+    *   *Pros:* Best practice. Use it when the value *won't* change. It prevents accidental changes.
+    *   *Cons:* You get an error if you try to reassign it later (e.g., `fullName = "New Name"` will fail).
+*   **`let`**
+    *   *Pros:* Use this if you plan to change the value later. Safely scoped to the block `{ }` it's in.
+    *   *Cons:* Can be reassigned, so you have to be careful not to change it accidentally if you didn't mean to.
+*   **`var`** (Old style)
+    *   *Pros:* Works in very old browsers.
+    *   *Cons:* "Leaks" out of blocks. generally **avoid** using this in modern code.
+
+### 2. console.log()
+**Goal:** See what's code is doing "behind the scenes".
+
+**How to insert:**
+Type `console.log(variableName)` anywhere you want to check a value.
+*   *Note:* You see this in the browser's "Developer Tools" (Press F12 -> Console tab). users of your website won't see this.
+
+### 3. alert()
+**Goal:** Pop up a message box to the user.
+
+**How to insert:**
+Type `alert("Message")` or `alert(variableName)`.
+
+**Pros & Cons:**
+*   *Pros:* Very easy to test if code is working. Impossible to miss.
+*   *Cons:* **It stops everything.** The rest of your code won't run until the user clicks "OK". It can be annoying for users if overused.

@@ -1,0 +1,13 @@
+<html>
+<body>
+   <p id = "output"> </p>
+   <script>
+      const output = document.getElementById("output");
+      if (window.Promise) {
+         output.innerHTML += "Your browser supports promises";
+      } else {
+         output.innerHTML += "Your browser doesn't support promises";
+      }
+   </script>
+</body>
+</html>

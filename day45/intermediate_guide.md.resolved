@@ -1,0 +1,76 @@
+# Intermediate Activities Guide
+
+To do these activities, you need an HTML file to hold your buttons and inputs.
+
+## 1. Setup HTML (`index.html`)
+
+Create a new file named `index.html` in the same folder and add this:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Practice</title>
+</head>
+<body>
+    
+    <!-- Area for Intermediate Activities -->
+    <h2>Sum Calculator</h2>
+    <input type="number" id="num1" placeholder="Number 1">
+    <input type="number" id="num2" placeholder="Number 2">
+    <button id="sumBtn">Calculate Sum</button>
+    <p>Result: <span id="resultDisplay">0</span></p>
+
+    <script src="intermediate.js"></script>
+</body>
+</html>
+```
+
+## 2. The JavaScript Code (`intermediate.js`)
+
+Create a file named `intermediate.js` and add this code:
+
+```javascript
+// 1. Create a function that accepts two numbers
+// 2. Return their sum
+function addNumbers(a, b) {
+    return a + b;
+}
+
+// 3. Use a button click to display the result in the HTML panel
+let button = document.getElementById("sumBtn");
+
+button.addEventListener("click", function() {
+    // Get values from the inputs
+    let n1 = Number(document.getElementById("num1").value);
+    let n2 = Number(document.getElementById("num2").value);
+
+    // Call our function
+    let sum = addNumbers(n1, n2);
+
+    // Display result
+    document.getElementById("resultDisplay").innerText = sum;
+});
+```
+
+## Explanation & "How To"
+
+### Functions
+**Goal:** Reuse code. You give it inputs (arguments), it does work, and gives back an output (return).
+*   `function name(inputs) { ... }` defines it.
+*   `return` sends data back.
+
+### Event Listeners (`addEventListener`)
+**Goal:** Wait for the user to do something (like click).
+
+**Pros & Cons vs `onclick=""` in HTML:**
+*   **`addEventListener` (The Modern Way)**
+    *   *Pros:* detailed control. You can add multiple listeners to the same button. Keeps HTML clean (Separation of Concerns).
+    *   *Cons:* Slightly more code to write.
+*   **`onclick="..."` (The Old/Simple Way)**
+    *   *Pros:* Very fast to write for simple tests.
+    *   *Cons:* Clutters HTML. overwrites any previous click handlers. **Avoid** for large apps.
+
+### `document.getElementById`
+**Goal:** Grab an element from your HTML so JavaScript can change it or read it.
+*   `id="..."` in HTML must match exactly.

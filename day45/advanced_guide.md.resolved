@@ -1,0 +1,80 @@
+# Advanced Activities Guide
+
+## 1. Update HTML (`index.html`)
+
+Add this section to your `body`, below the intermediate section:
+
+```html
+    <hr>
+    <!-- Area for Advanced Activities -->
+    <h2>Advanced Styling</h2>
+    <div id="box" style="width: 100px; height: 100px; background-color: lightgray; margin-bottom: 10px;">
+        I am a box
+    </div>
+    
+    <button class="color-btn" data-color="red">Turn Red</button>
+    <button class="color-btn" data-color="blue">Turn Blue</button>
+    <button class="color-btn" data-color="green">Turn Green</button>
+    <button id="toggleBtn">Toggle Dark Mode</button>
+
+    <style>
+        .dark-mode {
+            background-color: black;
+            color: white;
+            border: 2px solid yellow;
+        }
+    </style>
+
+    <script src="advanced.js"></script>
+```
+
+## 2. The JavaScript Code (`advanced.js`)
+
+Create a file named `advanced.js` and add this code:
+
+```javascript
+// 1. Create multiple buttons (We did this in HTML)
+
+// 2. Change text color and content dynamically when clicked
+let colorButtons = document.querySelectorAll(".color-btn");
+let box = document.getElementById("box");
+
+// Loop through all buttons to add listeners
+colorButtons.forEach(function(btn) {
+    btn.addEventListener("click", function() {
+        // Read the 'data-color' attribute (red, blue, green)
+        let color = btn.getAttribute("data-color");
+        
+        // Change the box style
+        box.style.backgroundColor = color;
+        box.style.color = "white";
+        box.innerText = "I am now " + color;
+    });
+});
+
+// 3. Try combining CSS style changes in JavaScript (Class Toggling)
+let toggleBtn = document.getElementById("toggleBtn");
+
+toggleBtn.addEventListener("click", function() {
+    // Instead of changing individual styles (style.color = ...),
+    // we just add/remove a CSS class. This is much cleaner!
+    box.classList.toggle("dark-mode");
+});
+```
+
+## Explanation & "How To"
+
+### `document.querySelectorAll` vs `getElementById`
+**Goal:** Select things.
+*   `getElementById("id")`: Gets **one** specific item. Best for unique things.
+*   `querySelectorAll(".class")`: Gets **a list** of items. Good for applying the same logic to many buttons.
+
+### Direct Style (`element.style.property`)
+**Goal:** Change one specific visual thing.
+**Pros:** Good for dynamic values (like a color picker or progress bar width).
+**Cons:** Gets messy if you change 10 properties at once.
+
+### Class Toggling (`classList.toggle`)
+**Goal:** Switch between "states" or themes.
+**Pros:** **Best Practice**. You define the look in CSS (`.dark-mode`), and JS just flips the switch. Keeps JS code simple.
+**Cons:** You need to write the CSS beforehand.
